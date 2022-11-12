@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Table from 'react-bootstrap/Table';
 import { getCommentsFP } from "../services/peli-services";
+import {useUser} from "../contexts/userContext"
 import { useParams } from 'react-router-dom';
 import { getAllPelis,getPeli, deletePeli } from "../services/peli-services";
 import Button from 'react-bootstrap/Button';
+import logout from '../services/logout';
 
 function Details() {
 
@@ -13,7 +15,8 @@ function Details() {
     const [pelis, setPelis] = useState([]); 
     const [peli, setPeli] = useState(); 
     const [comments, setComments] = useState([]);    
-    const navigate = useNavigate();    
+    const navigate = useNavigate();   
+    const {user,setUser} = useUser(); 
 
     const getComments = async () => {
         try {
@@ -56,11 +59,21 @@ function Details() {
     if(peli){
          names = peli[0]?.name;
     }
+
+
+    const logOut = async() => {
+        const {success} = await logout();
+        navigate(`/`)
+        if(success) setUser(null)
+        
+        else window.alert("Error. No se pude desloguear")
+    }
     
 
    return (
-    <div>
+    <div className="container-reviews">
         <h3>{"Reviews for "+names}</h3>
+        <Button className="logout-button" variant="warning" onClick={logOut}>LOGOUT</Button>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -82,7 +95,7 @@ function Details() {
                     
                 </tbody>
             </Table>
-            <Button variant="danger" className="action-btn" onClick={() => delPelicula(id)} >Eliminar</Button>
+            <Button variant="danger" className="action-btn" onClick={() => delPelicula(id)}>Delete Movie</Button>
 
     </div>
   )

@@ -21,7 +21,9 @@ const Main = () => {
 
     const logOut = async() => {
         const {success} = await logout();
+        navigate(`/`)
         if(success) setUser(null)
+        
         else window.alert("Error. No se pude desloguear")
     }
 

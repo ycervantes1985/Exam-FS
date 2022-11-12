@@ -61,7 +61,7 @@ const redirectToAddPeliReview = id => navigate(`/agregar-review/${id}`)
                                 <td>{peli.avg ? parseFloat(peli.avg.toFixed(2)) : 0}</td>
                                 <td>
                                     <Button variant="danger" className="action-btn" onClick={() => listReviews(peli._id)} >Read Review</Button>
-                                    <Button variant="info" className="action-btn" onClick={() => goToForm(peli._id)} >Editar</Button>
+                                    
                                     <Button variant="success" className="action-btn" onClick={() => redirectToAddPeliReview(peli._id)} >Add a Review</Button>
                                 </td>
                             </tr>

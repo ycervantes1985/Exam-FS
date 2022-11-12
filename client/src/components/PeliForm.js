@@ -91,10 +91,11 @@ return (
                 onSubmit={(values) => addPeli(values)}
             >
                 {({ errors, touched }) => (
-                    <Form className="form-group">
+                    <Form className="form-group" id="form-peli">
+                        <h4>Submit a Movie and a Review</h4>
                         <div>
                             <label htmlFor='name' className="col-form-label">Nombre de la pelicula </label>
-                            <Field type='text' name='name' className={`form-control`} />
+                            <Field type='text' name='name' className={`form-control`} tabindex="1" />
                             {errors.name && touched.name ? <p>{errors.name}</p> : null}
                         </div>
 
@@ -123,7 +124,7 @@ return (
                             {errors.review && touched.review ? <p>{errors.review}</p> : null}
                         </div>
 
-                        <div>
+                        <div className="button-peli">
                             <button type='submit' disabled={Object.values(errors).length>0 || Object.values(touched).length===0}>Agregar</button>
                             <button onClick={() => backtoHome()} >Cancelar</button>
                         </div>

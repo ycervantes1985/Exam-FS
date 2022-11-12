@@ -74,6 +74,59 @@ text-decoration: none;
 
 }
 
+.container{
+margin-top: 20px;
+width: 1000px;
+display:flex;
+gap: 200px;
+
+}
+
+.container-register{
+  width: 350px;
+    border: 2px solid black;
+
+}
+
+.container-peli{
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 550px;
+  border: 2px solid black;
+
+}
+
+.button-peli{
+display: flex;
+gap: 25px;
+
+}
+
+#form-peli{
+ padding-top: 15px;
+ height: 400px;
+
+}
+
+.container-reviews Button{
+margin-top: 50px;
+margin-right: 200px;
+
+}
+
+.container-reviews .action-btn{
+  margin-right:900px;
+}
+
+
+
+.container-login{
+  width: 300px;
+  height: 280px;
+    border: 2px solid black;
+
+}
+
 .create-button{
   position: relative;
   left: 425px;
