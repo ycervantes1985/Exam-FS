@@ -54,7 +54,7 @@ function PeliForm() {
     }
 
     const backtoHome = () => {
-        navigate(`/`)
+        navigate(`/home`)
     }
 
     const peliSchema = Yup.object().shape({
