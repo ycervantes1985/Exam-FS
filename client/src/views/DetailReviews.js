@@ -44,7 +44,7 @@ function Details() {
             
             const peliculaBorrada = await deletePeli(id);
             setPelis(pelis.filter(peli=>peli._id !== id))            
-            navigate(`/`)
+            navigate(`/home`)
             } catch(err) {
                 console.log("Error:", err)
             }

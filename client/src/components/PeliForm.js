@@ -42,7 +42,7 @@ function PeliForm() {
         const createPeliInService = !id ? await createPeli(values) : await updatePeli(id, values);        
             if (createPeliInService.data.message ==="" || createPeliInService.data.message ===" ") {
                 alert("Se ha creado la pelicula")
-                navigate("/");               
+                navigate("/home");               
                 }else {
                     const errorResponse = createPeliInService.data.errors;
                     const errorArr = [];
