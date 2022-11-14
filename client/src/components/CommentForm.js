@@ -49,7 +49,7 @@ const CommentForm = () => {
     }
 
     const backtoHome = () => {
-        navigate(`/`)
+        navigate(`/home`)
     }
 
     return (
