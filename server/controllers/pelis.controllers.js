@@ -11,10 +11,10 @@ module.exports.addPeli = async (req, res) => {
                     rating
 
         }  
-    try {        
+    try {      
         
             
-        const newPeli = await Peli.create(req.body);  
+        const newPeli = await Peli.create(req.body.name);  
         const average = await Peli.updateMany({}, [{$set: {avg: {$avg: "$comments.rating"}}}])
              
         
